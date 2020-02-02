@@ -40,19 +40,6 @@
 	use Google\Cloud\Speech\V1\RecognitionConfig\AudioEncoding;
 	use Google\Cloud\Speech\V1\SpeakerDiarizationConfig;
 	use Google\Cloud\Speech\V1\SpeechContext;
-	
-	// An issue with Guzzle client means I must set a flag to false
-	/*
-	use Google\Cloud\Firestore\FirestoreClient;
-	use GuzzleHttp\Client;
-	use Psr\Http\Message\RequestInterface;
-
-	$guzzleClient = new Client(['verify' => false]);
-	$firestore = new FirestoreClient([
-		'authHttpHandler' => function (RequestInterface $request, array $options = []) use ($guzzleClient) {
-			return $guzzleClient->send($request, $options);
-		}
-	]);*/
 
 	// Configuration variables
 	
@@ -87,94 +74,12 @@
 		"four", "five", "six",
 		"seven", "eight", "nine");
 		
-	$keyPhrases = array();
-	
-	foreach($keyWords as $word1)
-	{
-		array_push($keyPhrases, $word1);
-		foreach ($keyWords as $word2)
-		{
-			array_push($keyPhrases, $word1.' '.$word2);
-			foreach($keyWords as $word3)
-			{
-				array_push($keyPhrases, $word1.' '.$word2.' '.$word3);
-			}
-		}
-	}
-	
 	$speechContext = new SpeechContext();
-	$speechContext->setPhrases = $keyPhrases;
-	/*	
-	$speechContext->phrases = [
-		"alpha", 
-		"bravo", 
-		"charlie", 
-		"delta", 
-		"echo", 
-		"foxtrot", 
-		"golf", 
-		"hotel", 
-		"india", 
-		"juliet", 
-		"kilo", 
-		"lima", 
-		"mike", 
-		"november", 
-		"oscar", 
-		"papa", 
-		"quebec", 
-		"romeo", 
-		"sierra", 
-		"tango", 
-		"uniform", 
-		"victor", 
-		"whisky", 
-		"x-ray", 
-		"yankee", 
-		"zulu"];
-		
-	$speechContext->boost = 50;
-	
-	$jsonSpeechContext = json_encode($speechContext);
-	$speechContextArr = array($jsonSpeechContext);
-	
-	
-	$speechContext = json_encode(array(
-	'phrases' => array(
-		"alpha", 
-		"bravo", 
-		"charlie", 
-		"delta", 
-		"echo", 
-		"foxtrot", 
-		"golf", 
-		"hotel", 
-		"india", 
-		"juliet", 
-		"kilo", 
-		"lima", 
-		"mike", 
-		"november", 
-		"oscar", 
-		"papa", 
-		"quebec", 
-		"romeo", 
-		"sierra", 
-		"tango", 
-		"uniform", 
-		"victor", 
-		"whisky", 
-		"x-ray", 
-		"yankee", 
-		"zulu"),
-	'boost' => 50	
-	));*/
+	$speechContext->setPhrases = $keyWords;
 	
 	// Speaker Diarization Config (Speaker recognition
 	$diarConfig = new SpeakerDiarizationConfig();
 	$diarConfig->setEnableSpeakerDiarization(true);
-	
-	
 	
 	// get contents of a file into a string
 	$content = file_get_contents($audioFile);
@@ -192,19 +97,6 @@
 	$recognitionConfig->setEnableWordTimeOffsets($enableWordTimeOffsets);
 	$recognitionConfig->setDiarizationConfig($diarConfig);
 	$recognitionConfig->setSpeechContexts(array($speechContext));
-
-	// set config
-	$config = (new RecognitionConfig())
-		->setEncoding($encoding)
-	    ->setSampleRateHertz($sampleRateHertz)
-		->setUseEnhanced(true)
-		->setModel($model)
-		//->setEnableSpeakerDiarization(new SpeakerDiarizationConfig())
-		//	->setEnableSpeakerDiarization(true)
-		//	->setMaxSpeakerCount(8)
-	//	->setSpeechContexts($speechContextArr)
-		->setLanguageCode($languageCode)
-		->setEnableWordTimeOffsets($enableWordTimeOffsets);
 
 	// create the speech client
 	$client = new SpeechClient();
