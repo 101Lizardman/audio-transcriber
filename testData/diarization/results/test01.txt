@@ -1,0 +1,32 @@
+Word: Sierra Hotel Alpha 3 to 8
+Speaker tag: 3
+
+Word: Delta Oscar Mike 
+Speaker tag: 2
+
+Word: 7901 
+Speaker tag: 3
+
+Word: foxtrot alpha Zulu 469
+Speaker tag: 3
+
+Word: Sierra Hotel Alpha 3 to 8
+Speaker tag: 3
+
+Word: don't know if the mic 
+Speaker tag: 2
+
+Word: 791
+Speaker tag: 3
+
+Word: foxtrot alpha Zulu full six nine
+Speaker tag: 3
+
+Word: Sierra Hotel Alpha 3 to 8
+Speaker tag: 2
+
+Word: Delta Akamai
+Speaker tag: 2
+
+Word: 791 foxtrot alpha Zulu full 6:9
+Speaker tag: 3

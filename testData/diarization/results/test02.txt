@@ -1,0 +1,26 @@
+Word: Sierra Hotel Alpha 3 to 8
+Speaker tag: 1
+
+Word: Delta f***ed up Mike
+Speaker tag: 1
+
+Word: 7901
+Speaker tag: 2
+
+Word: foxtrot alpha zulu 469
+Speaker tag: 2
+
+Word: Sierra Hotel Alpha 3 to 8
+Speaker tag: 1
+
+Word: you're welcome
+Speaker tag: 1
+
+Word: I-79 1 foxtrot alpha Zulu full six nine
+Speaker tag: 2
+
+Word: attrition rate
+Speaker tag: 1
+
+Word: iPhone 6 Plus
+Speaker tag: 2
