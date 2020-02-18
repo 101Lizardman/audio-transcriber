@@ -1,3 +1,9 @@
 [submodule "python-speech"]
 	path = python-speech
 	url = https://github.com/googleapis/python-speech
+[submodule "php-docs-samples"]
+	path = php-docs-samples
+	url = https://github.com/GoogleCloudPlatform/php-docs-samples.git
+[submodule "google-cloud-php-speech"]
+	path = google-cloud-php-speech
+	url = https://github.com/googleapis/google-cloud-php-speech.git
